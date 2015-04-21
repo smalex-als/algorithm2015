@@ -1,4 +1,9 @@
-package ru.smalex.algo2015.sorting;
+package ru.smalex.algo2015.util;
+
+import ru.smalex.algo2015.sorting.InsertionSort;
+import ru.smalex.algo2015.sorting.MergeSort;
+import ru.smalex.algo2015.sorting.SelectionSort;
+import ru.smalex.algo2015.sorting.ShellSort;
 
 import java.util.ArrayList;
 import java.util.Arrays;

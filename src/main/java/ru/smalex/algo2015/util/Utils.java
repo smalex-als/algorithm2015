@@ -1,4 +1,4 @@
-package ru.smalex.algo2015.sorting;
+package ru.smalex.algo2015.util;
 
 import java.util.Arrays;
 import java.util.Random;

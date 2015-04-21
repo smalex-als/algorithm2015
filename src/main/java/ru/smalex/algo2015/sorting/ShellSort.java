@@ -1,5 +1,7 @@
 package ru.smalex.algo2015.sorting;
 
+import ru.smalex.algo2015.util.Utils;
+
 /**
  * Created by smalex on 21/04/15.
  */

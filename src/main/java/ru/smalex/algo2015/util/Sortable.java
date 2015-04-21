@@ -1,4 +1,4 @@
-package ru.smalex.algo2015.sorting;
+package ru.smalex.algo2015.util;
 
 /**
  * Created by smalex on 21/04/15.

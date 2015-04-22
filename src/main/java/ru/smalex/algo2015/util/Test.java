@@ -2,6 +2,7 @@ package ru.smalex.algo2015.util;
 
 import ru.smalex.algo2015.sorting.InsertionSort;
 import ru.smalex.algo2015.sorting.MergeSort;
+import ru.smalex.algo2015.sorting.QuickSort;
 import ru.smalex.algo2015.sorting.SelectionSort;
 import ru.smalex.algo2015.sorting.ShellSort;
 
@@ -35,17 +36,21 @@ public class Test {
   };
   public static final Sortable QUICK_SORT = new Sortable() {
     public void sort(Comparable[] a) {
-      Arrays.sort(a);
+      QuickSort.sort(a);
     }
   };
 
   public static void main(String[] args) {
+    sortObjects();
+  }
+
+  private static void sortObjects() {
     List<Sortable> sortables = new ArrayList<Sortable>();
-//    sortables.add(SELECTION_SORT);
-//    sortables.add(INSERTION_SORT);
-//    sortables.add(SHELL_SORT);
+    sortables.add(SELECTION_SORT);
+    sortables.add(INSERTION_SORT);
+    sortables.add(SHELL_SORT);
     sortables.add(MERGE_SORT);
-//    sortables.add(QUICK_SORT);
+    sortables.add(QUICK_SORT);
 
     Integer[] orig = Utils.shuffleNumbers(16);
 //    Utils.dump("unsorted", arrays);

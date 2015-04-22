@@ -22,4 +22,12 @@ public class InsertionSort {
       }
     }
   }
+
+  public static void sort(int[] a, int lo, int hi) {
+    for (int i = lo + 1; i <= hi; i++) {
+      for (int j = i; j > lo && a[j] < a[j - 1]; j--) {
+        Utils.swap(a, j, j - 1);
+      }
+    }
+  }
 }

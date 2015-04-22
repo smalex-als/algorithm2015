@@ -12,12 +12,28 @@ public class Utils {
   }
 
   public static void swap(Comparable[] a, int i, int j) {
+    if (i == j) {
+      return;
+    }
     final Comparable tmp = a[i];
     a[i] = a[j];
     a[j] = tmp;
   }
 
+  public static void swap(int[] a, int i, int j) {
+    if (i == j) {
+      return;
+    }
+    final int tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+
   public static boolean isSorted(Comparable[] a) {
+    return isSorted(a, 0, a.length - 1);
+  }
+
+  public static boolean isSorted(int[] a) {
     return isSorted(a, 0, a.length - 1);
   }
 
@@ -30,8 +46,25 @@ public class Utils {
     return true;
   }
 
+  public static boolean isSorted(int[] a, int low, int hi) {
+    for (int i = low + 1; i < hi; i++) {
+      if (a[i] < a[i - 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static Integer[] shuffleNumbers(int n) {
     Integer[] arrays = new Integer[n];
+    Random random = new Random();
+    for (int i = 0; i < arrays.length; i++) {
+      arrays[i] = Math.abs(random.nextInt() % arrays.length);
+    }
+    return arrays;
+  }
+  public static int[] shuffleNumbersInt(int n) {
+    int[] arrays = new int[n];
     Random random = new Random();
     for (int i = 0; i < arrays.length; i++) {
       arrays[i] = Math.abs(random.nextInt() % arrays.length);

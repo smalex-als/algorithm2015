@@ -55,6 +55,16 @@ public class Utils {
     return true;
   }
 
+  public static void shuffle(int[] order) {
+    Random rnd = new Random();
+    for (int i = order.length; i > 0; i--) {
+      final int random = Math.abs(rnd.nextInt() % i);
+      final int index = order[random];
+      order[random] = order[i - 1];
+      order[i - 1] = index;
+    }
+  }
+
   public static Integer[] shuffleNumbers(int n) {
     Integer[] arrays = new Integer[n];
     Random random = new Random();

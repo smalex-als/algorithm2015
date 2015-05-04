@@ -8,7 +8,10 @@ import ru.smalex.algo2015.util.Utils;
 public class HeapSort {
   public static void sort(Comparable[] a) {
     int N = a.length;
-    for (int k = (N - 1) / 2; k >= 0; k--) {
+    if (N < 2) {
+      return;
+    }
+    for (int k = N / 2; k >= 0; k--) {
       sink(a, k, N);
     }
     while (N > 1) {
@@ -19,7 +22,7 @@ public class HeapSort {
   }
 
   public static void sink(Comparable[] a, int k, int N) {
-    while (k < N / 2) {
+    while (k * 2 + 1 < N) {
       int j = k * 2 + 1;
       if (j + 1 < N && less(a, j, j + 1)) j++;
       if (!less(a, k, j)) break;
